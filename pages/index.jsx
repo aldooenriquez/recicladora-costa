@@ -12,6 +12,8 @@ import { Divider } from "@chakra-ui/layout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Box } from "@chakra-ui/layout";
+import { IconButton } from "@chakra-ui/button";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -25,15 +27,14 @@ export default function Home() {
       <Flex flexDir="column" w="100%" h="auto" bgColor="white">
         {/* Banner */}
         <Flex
-          flexDir={["column", "column", "row", "row"]}
+          flexDir={["column", "column", "row-reverse", "row-reverse"]}
           w="100%"
-          h="85vh"
-          bgColor="white"
+          h={["80vh", "80vh", "80vh", "78vh"]}
           p="15px"
-          bgImage="url('/assets/banner.jpg')"
+          bgImage="url('/assets/basura.jpg')"
           bgPosition="center"
           bgRepeat="no-repeat"
-          bgSize="contain"
+          bgSize="cover"
         >
           <VStack
             w={["100%", "100%", "50%", "50%"]}
@@ -41,9 +42,11 @@ export default function Home() {
             spacing={4}
             justifyContent={["flex-end", "flex-end", "center", "center"]}
             pb="30px"
+            background="rgba(0,0,0,0.4)"
+            borderRadius="30%"
           >
-            <Text fontSize="3xl" color="black" align="center" fontWeight="bold">
-              Por el futuro del medio ambiente
+            <Text fontSize="3xl" color="white" align="center" fontWeight="bold">
+              Reciclaje y gestion integral de residuos
             </Text>
             <NextLink href="/contacto" passHref>
               <Button as="a" colorScheme="green" color="white" variant="solid">
@@ -67,7 +70,7 @@ export default function Home() {
               align="center"
               w="100%"
             >
-              ¿Quíenes somos?
+              Sobre nosotros
             </Text>
             <Text
               fontSize={["16px", "18px", "20px", "22px"]}
@@ -75,11 +78,12 @@ export default function Home() {
               align="center"
               fontWeight="bold"
             >
-              Especializada en la gestion integral y recolección de residuos
-              sólidos urbanos, residuos de manejo especial, acopio de materiales
-              reciclables, destrucción de papelería fiscal y renta de
-              contenedores. Brindamos servicio a empresas pequeñas, medianas y
-              grandes de diversos sectores, así como a individuos.
+              Somos una empresa especializada en la gestión integral y
+              recolección de residuos sólidos urbanos, residuos de manejo
+              especial, acopio de materiales reciclables, destrucción de
+              papelería fiscal y renta de contenedores. Brindamos servicio a
+              empresas pequeñas, medianas y grandes de diversos sectores, así
+              como a individuos.
             </Text>
             <NextLink href="/nosotros" passHref>
               <Button
@@ -98,8 +102,8 @@ export default function Home() {
         {/*  Estadisticas */}
         <Flex flexDir="row" w="100%" h="auto" p="50px 20px">
           <Center w="100%" h={["auto", "auto", "300px", "300px"]}>
-            <VStack spacing={8}>
-              <Text fontSize="2xl" align="center">
+            <VStack w="100%" spacing={8}>
+              <Text fontSize="3xl" align="center">
                 Nuestros numeros
               </Text>
               <Grid
@@ -126,7 +130,7 @@ export default function Home() {
                   align="center"
                   justify="center"
                 >
-                  <Center fontWeight="bold" fontSize="4xl">
+                  <Center fontWeight="bold" fontSize="6xl">
                     <CountUp start={0} end={1500} duration={7.5} delay={10} />
                   </Center>
                   <Text fontSize="16px">Cosa a describir 1</Text>
@@ -137,7 +141,7 @@ export default function Home() {
                   align="center"
                   justify="center"
                 >
-                  <Center fontWeight="bold" fontSize="4xl">
+                  <Center fontWeight="bold" fontSize="6xl">
                     <CountUp start={0} end={3000} duration={15} delay={10} />
                   </Center>
                   <Text fontSize="16px">Cosa a describir 2</Text>
@@ -148,7 +152,7 @@ export default function Home() {
                   align="center"
                   justify="center"
                 >
-                  <Center fontWeight="bold" fontSize="4xl">
+                  <Center fontWeight="bold" fontSize="6xl">
                     <CountUp start={0} end={800} duration={4} delay={10} />
                   </Center>
                   <Text fontSize="16px">Cosa a describir 3</Text>
@@ -159,7 +163,7 @@ export default function Home() {
                   align="center"
                   justify="center"
                 >
-                  <Center fontWeight="bold" fontSize="4xl">
+                  <Center fontWeight="bold" fontSize="6xl">
                     <CountUp start={0} end={2000} duration={10} delay={10} />
                   </Center>
                   <Text fontSize="16px">Cosa a describir 4</Text>
@@ -172,95 +176,117 @@ export default function Home() {
         {/* Servicios */}
         <Flex flexDir="column">
           <Center w="100%" h="auto">
-            <Text fontSize="2xl" align="center" pt="20px">
+            <Text fontSize="3xl" align="center" pt="20px">
               En que podemos ayudarte...
             </Text>
           </Center>
           <Flex flexDir={["column", "column", "row", "row"]} w="100%" h="auto">
-            <VStack w="100%" align="center" pt="40px">
+            <VStack w="100%" align="center" pt="50px" spacing={3}>
               <Image
-                src="/assets/plantaReciclaje.jpg"
-                w="250px"
-                h="180px"
+                src="/assets/materialReciclable.jpg"
+                w="150px"
+                h="150px"
                 overflow="hidden"
-                borderRadius="10%"
+                borderRadius="100%"
               />
-              <Text w="80%" align="left" fontSize="20px" fontWeight="black">
-                Recolección de distintos desechos
-              </Text>
-              <Text w="80%" align="justify" fontSize="14px">
-                No te preocupes mas por que hacer con tus desechos, nosotros los
-                recogemos directamente en donde esten.
+              <Text
+                w="80%"
+                h="100px"
+                align="center"
+                fontSize="20px"
+                fontWeight="black"
+              >
+                Recolección de materiales reciclables
               </Text>
               <NextLink href="/servicios" passHref>
-                <Text
+                <IconButton
                   as="a"
-                  w="80%"
-                  align="left"
-                  fontSize="14px"
+                  fontSize="2xl"
+                  bgColor="transparent"
                   color="green.500"
-                  fontWeight="bold"
-                >
-                  Aprende como lo logramos &gt;
-                </Text>
+                  icon={<FaArrowAltCircleRight />}
+                />
               </NextLink>
             </VStack>
-            <VStack w="100%" align="center" pt="40px">
+            <VStack w="100%" align="center" pt="50px" spacing={3}>
               <Image
-                src="/assets/contenedor.jpg"
-                w="250px"
-                h="180px"
+                src="/assets/basura.jpg"
+                w="150px"
+                h="150px"
                 overflow="hidden"
-                borderRadius="10%"
+                borderRadius="100%"
               />
-              <Text w="80%" align="left" fontSize="20px" fontWeight="black">
-                Renta de contenedores
-              </Text>
-              <Text w="80%" align="justify" fontSize="14px">
-                ¿No tienes donde almacenar los desechos que genera tu empresa?
-                Nosotros te proporcionamos el contenedor que mas se adecue a tus
-                necesidades.
+              <Text
+                w="80%"
+                h="100px"
+                align="center"
+                fontSize="20px"
+                fontWeight="black"
+              >
+                Recolección de basura
               </Text>
               <NextLink href="/servicios" passHref>
-                <Text
+                <IconButton
                   as="a"
-                  w="80%"
-                  align="left"
-                  fontSize="14px"
+                  fontSize="2xl"
+                  bgColor="transparent"
                   color="green.500"
-                  fontWeight="bold"
-                >
-                  Conoce los tamaños disponibles &gt;
-                </Text>
+                  icon={<FaArrowAltCircleRight />}
+                />
               </NextLink>
             </VStack>
-            <VStack w="100%" align="center" pt="40px" pb="20px">
+            <VStack w="100%" align="center" pt="50px" spacing={3}>
               <Image
-                src="/assets/venta.jpg"
-                w="250px"
-                h="180px"
+                src="/assets/llantas.jpg"
+                w="150px"
+                h="150px"
                 overflow="hidden"
-                borderRadius="10%"
+                borderRadius="100%"
               />
-              <Text w="80%" align="left" fontSize="20px" fontWeight="black">
-                Venta de materiales reciclables
-              </Text>
-              <Text w="80%" align="justify" fontSize="14px">
-                Si eres una empresa que trabajas materiales reciclables con
-                nosotros puedes comprar estos materiales y asi agilizar tus
-                procesos de obtencion.
+              <Text
+                w="80%"
+                h="100px"
+                align="center"
+                fontSize="20px"
+                fontWeight="black"
+              >
+                Retiro de llantas
               </Text>
               <NextLink href="/servicios" passHref>
-                <Text
+                <IconButton
                   as="a"
-                  w="80%"
-                  align="left"
-                  fontSize="14px"
+                  fontSize="2xl"
+                  bgColor="transparent"
                   color="green.500"
-                  fontWeight="bold"
-                >
-                  Explora nuestros materiales disponibles &gt;
-                </Text>
+                  icon={<FaArrowAltCircleRight />}
+                />
+              </NextLink>
+            </VStack>
+            <VStack w="100%" align="center" pt="50px" spacing={3}>
+              <Image
+                src="/assets/papelOficina.jpg"
+                w="150px"
+                h="150px"
+                overflow="hidden"
+                borderRadius="100%"
+              />
+              <Text
+                w="80%"
+                h="100px"
+                align="center"
+                fontSize="20px"
+                fontWeight="black"
+              >
+                Recolección de papeleria fiscal
+              </Text>
+              <NextLink href="/servicios" passHref>
+                <IconButton
+                  as="a"
+                  fontSize="2xl"
+                  bgColor="transparent"
+                  color="green.500"
+                  icon={<FaArrowAltCircleRight />}
+                />
               </NextLink>
             </VStack>
           </Flex>

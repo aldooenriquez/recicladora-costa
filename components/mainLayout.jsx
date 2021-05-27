@@ -25,7 +25,7 @@ function NavBar({ children }) {
         w="100%"
         h="auto"
         align="center"
-        bgColor="transparent"
+        bgColor="white"
         position="sticky"
         top="0"
         zIndex={2}
@@ -35,7 +35,7 @@ function NavBar({ children }) {
           <Image
             src="/assets/logo.png"
             width="auto"
-            height={["15vh", "75px", "100px", "15vh"]}
+            height={["12vh", "13vh", "14vh", "15vh"]}
             pt="15px"
             pb="15px"
             pl="15px"
@@ -188,7 +188,7 @@ function Footer({ children }) {
         <Text fontSize="sm" color="white" align="center">
           Reciclaje de la Costa <br />
           Calle 24 #30, Lib. Tapeixtle, 28239 Manzanillo, Col. <br />
-          314 334 8888
+          Tel. 314 334 8888
         </Text>
       </Center>
       <Spacer />

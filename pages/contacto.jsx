@@ -4,6 +4,7 @@ import { FormControl } from "@chakra-ui/form-control";
 import { Input } from "@chakra-ui/input";
 import { Flex } from "@chakra-ui/layout";
 import { Grid } from "@chakra-ui/layout";
+import { VStack } from "@chakra-ui/layout";
 import { Center } from "@chakra-ui/layout";
 import { Box, Text } from "@chakra-ui/layout";
 import { Textarea } from "@chakra-ui/textarea";
@@ -22,11 +23,20 @@ export default function Contacto() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex flexDir="column" w="100%" h="auto" bgColor="white">
+        <Text fontSize="3xl" fontWeight="bold" align="center">
+          Contacto
+        </Text>
+        <Text p="10px" fontSize="lg" align="left">
+          {" "}
+          Rellena estos datos y pronto nos pondremos en contacto:
+        </Text>
         <Flex
           flexDir={["column", "column", "row", "row"]}
           w="100%"
-          h="100vh"
+          h={["auto", "auto", "86vh", "85vh"]}
           bgColor="white"
+          justify="center"
+          align="center"
         >
           <Center
             h={["50%", "50%", "100%", "100%"]}
@@ -38,6 +48,8 @@ export default function Contacto() {
               gridTemplateColumns="repeat(2,1fr)"
               gridTemplateRows="repeat(6,1fr)"
               gridTemplateAreas="'nombres apellidos' 'numero numero' 'email email' 'mensaje mensaje' 'mensaje mensaje' 'boton boton'"
+              gap="10px"
+              p="10px"
             >
               <FormControl id="Nombre" gridArea="nombres" isRequired>
                 <FormLabel>Nombres</FormLabel>
@@ -64,13 +76,19 @@ export default function Contacto() {
               </Button>
             </Grid>
           </Center>
-          <Box
-            h={["50%", "50%", "100%", "100%"]}
+          <Center
+            h={["300px", "300px", "90%", "90%"]}
             w={["100%", "100%", "50%", "50%"]}
-            bgColor="gray.500"
+            minH="50vh"
+            minW="50vw"
+            border="1px solid"
+            borderRadius="lg"
+            m="10px"
+            flexDir="column"
+            boxShadow="xl"
           >
             <SimpleMap />
-          </Box>
+          </Center>
         </Flex>
       </Flex>
     </>
