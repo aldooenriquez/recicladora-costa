@@ -1,21 +1,39 @@
 import { Button } from "@chakra-ui/button";
-import { FormLabel } from "@chakra-ui/form-control";
-import { FormControl } from "@chakra-ui/form-control";
+import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input } from "@chakra-ui/input";
-import { Flex } from "@chakra-ui/layout";
-import { Grid } from "@chakra-ui/layout";
-import { VStack } from "@chakra-ui/layout";
-import { Center } from "@chakra-ui/layout";
-import { Box, Text } from "@chakra-ui/layout";
+import { Center, Flex, Grid, Text } from "@chakra-ui/layout";
 import { Textarea } from "@chakra-ui/textarea";
 import Head from "next/head";
 import React from "react";
 import SimpleMap from "../components/map";
 import credentials from "../credentials";
-
+import { useForm } from "react-hook-form";
+import { useToast } from "@chakra-ui/toast";
 const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${credentials.mapsKey}`;
 
 export default function Contacto() {
+  const { handleSubmit, register } = useForm();
+  const toast = useToast();
+
+  async function onSubmit(data) {
+    try {
+      const res = await fetch("/api/sendMail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      res.json().then(console.log);
+    } catch {
+      toast({
+        title: "Ocurrio un error",
+        description: "Revise los datos ingresados",
+        duration: 9000,
+        position: "top-left",
+        status: "error",
+      });
+    }
+  }
+
   return (
     <>
       <Head>
@@ -50,28 +68,52 @@ export default function Contacto() {
               gridTemplateAreas="'nombres apellidos' 'numero numero' 'email email' 'mensaje mensaje' 'mensaje mensaje' 'boton boton'"
               gap="10px"
               p="10px"
+              as="form"
+              onSubmit={handleSubmit(onSubmit)}
             >
               <FormControl id="Nombre" gridArea="nombres" isRequired>
                 <FormLabel>Nombres</FormLabel>
-                <Input placeholder="Ingresar nombres" />
+                <Input
+                  placeholder="Ingresar nombres"
+                  type="text"
+                  {...register("firstName", { required: true })}
+                />
               </FormControl>
               <FormControl id="Nombre" gridArea="apellidos" isRequired>
                 <FormLabel>Apellidos</FormLabel>
-                <Input placeholder="Ingresar apellidos" />
+                <Input
+                  placeholder="Ingresar apellidos"
+                  type="text"
+                  {...register("lastName", { required: true })}
+                />
               </FormControl>
               <FormControl id="Nombre" gridArea="numero" isRequired>
                 <FormLabel>Numero telefonico</FormLabel>
-                <Input placeholder="(123)-4567-890" />
+                <Input
+                  placeholder="(123)-4567-890"
+                  {...register("phoneNumber", {
+                    required: true,
+                    maxLength: 20,
+                  })}
+                />
               </FormControl>
               <FormControl id="Nombre" gridArea="email" isRequired>
                 <FormLabel>Email</FormLabel>
-                <Input placeholder="alguien@algo.com" />
+                <Input
+                  type="email"
+                  placeholder="alguien@algo.com"
+                  {...register("email", { required: true })}
+                />
               </FormControl>
               <FormControl id="Nombre" gridArea="mensaje" isRequired>
                 <FormLabel>Mensaje:</FormLabel>
-                <Textarea placeholder="Platicanos un poco de tus  dudas." />
+                <Textarea
+                  placeholder="Platicanos un poco de tus dudas."
+                  type="text"
+                  {...register("message", { required: true, maxLength: 256 })}
+                />
               </FormControl>
-              <Button gridArea="boton" colorScheme="green">
+              <Button gridArea="boton" colorScheme="green" type="submit">
                 Enviar
               </Button>
             </Grid>
