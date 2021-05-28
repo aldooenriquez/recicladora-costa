@@ -185,7 +185,7 @@ function Footer({ children }) {
     <Flex flexDir="row" bgColor="green.500" h="100px" w="100%">
       <Spacer />
       <Center w="60%">
-        <Text fontSize="sm" color="white" align="center">
+        <Text fontSize={["md", "md", "lg", "lg"]} color="white" align="center">
           Reciclaje de la Costa <br />
           Calle 24 #30, Lib. Tapeixtle, 28239 Manzanillo, Col. <br />
           Tel. 314 334 8888

@@ -40,23 +40,34 @@ export default function Home() {
             w={["100%", "100%", "50%", "50%"]}
             h={["50%", "50%", "100%", "100%"]}
             spacing={4}
-            justifyContent={["flex-end", "flex-end", "center", "center"]}
+            justifyContent={["end", "end", "center", "center"]}
             pb="30px"
-            background="rgba(0,0,0,0.4)"
-            borderRadius="30%"
           >
-            <Text fontSize="3xl" color="white" align="center" fontWeight="bold">
+            <Text fontSize="5xl" color="white" align="center" fontWeight="bold">
               Reciclaje y gestion integral de residuos
             </Text>
             <NextLink href="/contacto" passHref>
-              <Button as="a" colorScheme="green" color="white" variant="solid">
+              <Button
+                as="a"
+                size="lg"
+                colorScheme="green"
+                color="white"
+                variant="solid"
+                p="5px"
+              >
                 CONACTA CON NOSOTROS
               </Button>
             </NextLink>
           </VStack>
         </Flex>
         {/* Descripcion corta */}
-        <Flex flexDir="row" h="auto" p="30px" bgColor="green.500" w="100%">
+        <Flex
+          flexDir="row"
+          h={["auto", "500px", "500px", "500px"]}
+          p="30px"
+          bgColor="green.500"
+          w="100%"
+        >
           <Spacer />
           <VStack
             w={["95%", "80%", "70%", "60%"]}
@@ -65,15 +76,16 @@ export default function Home() {
             spacing={4}
           >
             <Text
-              fontSize={["12px", "14px", "16px", "18px"]}
+              fontSize={["2xl", "2xl", "3xl", "3xl"]}
               color="white"
               align="center"
               w="100%"
+              pb="50px"
             >
               Sobre nosotros
             </Text>
             <Text
-              fontSize={["16px", "18px", "20px", "22px"]}
+              fontSize={["lg", "lg", "lg", "lg"]}
               color="white"
               align="center"
               fontWeight="bold"
@@ -182,13 +194,15 @@ export default function Home() {
           </Center>
           <Flex flexDir={["column", "column", "row", "row"]} w="100%" h="auto">
             <VStack w="100%" align="center" pt="50px" spacing={3}>
-              <Image
-                src="/assets/materialReciclable.jpg"
-                w="150px"
-                h="150px"
-                overflow="hidden"
-                borderRadius="100%"
-              />
+              <a href="/servicios" passHref>
+                <Image
+                  src="/assets/materialReciclable.jpg"
+                  w="150px"
+                  h="150px"
+                  overflow="hidden"
+                  borderRadius="100%"
+                />
+              </a>
               <Text
                 w="80%"
                 h="100px"
@@ -209,13 +223,15 @@ export default function Home() {
               </NextLink>
             </VStack>
             <VStack w="100%" align="center" pt="50px" spacing={3}>
-              <Image
-                src="/assets/basura.jpg"
-                w="150px"
-                h="150px"
-                overflow="hidden"
-                borderRadius="100%"
-              />
+              <a href="/servicios" passHref>
+                <Image
+                  src="/assets/basura.jpg"
+                  w="150px"
+                  h="150px"
+                  overflow="hidden"
+                  borderRadius="100%"
+                />
+              </a>
               <Text
                 w="80%"
                 h="100px"
@@ -223,7 +239,7 @@ export default function Home() {
                 fontSize="20px"
                 fontWeight="black"
               >
-                Recolección de basura
+                Gestión de residuos
               </Text>
               <NextLink href="/servicios" passHref>
                 <IconButton
@@ -236,13 +252,15 @@ export default function Home() {
               </NextLink>
             </VStack>
             <VStack w="100%" align="center" pt="50px" spacing={3}>
-              <Image
-                src="/assets/llantas.jpg"
-                w="150px"
-                h="150px"
-                overflow="hidden"
-                borderRadius="100%"
-              />
+              <a href="/servicios" passHref>
+                <Image
+                  src="/assets/papelOficina.jpg"
+                  w="150px"
+                  h="150px"
+                  overflow="hidden"
+                  borderRadius="100%"
+                />
+              </a>
               <Text
                 w="80%"
                 h="100px"
@@ -250,7 +268,7 @@ export default function Home() {
                 fontSize="20px"
                 fontWeight="black"
               >
-                Retiro de llantas
+                Destrucción de papeleria fiscal
               </Text>
               <NextLink href="/servicios" passHref>
                 <IconButton
@@ -263,13 +281,15 @@ export default function Home() {
               </NextLink>
             </VStack>
             <VStack w="100%" align="center" pt="50px" spacing={3}>
-              <Image
-                src="/assets/papelOficina.jpg"
-                w="150px"
-                h="150px"
-                overflow="hidden"
-                borderRadius="100%"
-              />
+              <a href="/servicios" passHref>
+                <Image
+                  src="/assets/contenedor.jpg"
+                  w="150px"
+                  h="150px"
+                  overflow="hidden"
+                  borderRadius="100%"
+                />
+              </a>
               <Text
                 w="80%"
                 h="100px"
@@ -277,7 +297,36 @@ export default function Home() {
                 fontSize="20px"
                 fontWeight="black"
               >
-                Recolección de papeleria fiscal
+                Renta de contenedores
+              </Text>
+              <NextLink href="/servicios" passHref>
+                <IconButton
+                  as="a"
+                  fontSize="2xl"
+                  bgColor="transparent"
+                  color="green.500"
+                  icon={<FaArrowAltCircleRight />}
+                />
+              </NextLink>
+            </VStack>
+            <VStack w="100%" align="center" pt="50px" spacing={3}>
+              <a href="/servicios" passHref>
+                <Image
+                  src="/assets/plantaReciclaje.jpg"
+                  w="150px"
+                  h="150px"
+                  overflow="hidden"
+                  borderRadius="100%"
+                />
+              </a>
+              <Text
+                w="80%"
+                h="100px"
+                align="center"
+                fontSize="20px"
+                fontWeight="black"
+              >
+                Apoyo en programas de reciclado
               </Text>
               <NextLink href="/servicios" passHref>
                 <IconButton

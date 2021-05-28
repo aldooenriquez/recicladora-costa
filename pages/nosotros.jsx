@@ -72,7 +72,7 @@ export default function Nosotros() {
         {/* Historia */}
         <Flex
           flexDir="column"
-          w="80%"
+          w={["100%", "100%", "80%", "80%"]}
           h="auto"
           p="40px 20px"
           align="center"
@@ -97,7 +97,7 @@ export default function Nosotros() {
         {/* Mision */}
         <Flex
           flexDir={["column", "column", "row", "row"]}
-          w="100%"
+          w={["100%", "100%", "90%", "90%"]}
           h="auto"
           mb="50px"
         >
