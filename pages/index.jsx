@@ -177,7 +177,7 @@ export default function Home() {
         <Flex flexDir="column">
           <Center w="100%" h="auto">
             <Text fontSize="3xl" align="center" pt="20px">
-              En que podemos ayudarte...
+              Servicios populares
             </Text>
           </Center>
           <Flex flexDir={["column", "column", "row", "row"]} w="100%" h="auto">
