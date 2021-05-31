@@ -194,7 +194,7 @@ export default function Home() {
           </Center>
           <Flex flexDir={["column", "column", "row", "row"]} w="100%" h="auto">
             <VStack w="100%" align="center" pt="50px" spacing={3}>
-              <a href="/servicios" passHref>
+              <a href="/servicios">
                 <Image
                   src="/assets/materialReciclable.jpg"
                   w="150px"
@@ -223,7 +223,7 @@ export default function Home() {
               </NextLink>
             </VStack>
             <VStack w="100%" align="center" pt="50px" spacing={3}>
-              <a href="/servicios" passHref>
+              <a href="/servicios">
                 <Image
                   src="/assets/basura.jpg"
                   w="150px"
@@ -252,7 +252,7 @@ export default function Home() {
               </NextLink>
             </VStack>
             <VStack w="100%" align="center" pt="50px" spacing={3}>
-              <a href="/servicios" passHref>
+              <a href="/servicios">
                 <Image
                   src="/assets/papelOficina.jpg"
                   w="150px"
@@ -281,7 +281,7 @@ export default function Home() {
               </NextLink>
             </VStack>
             <VStack w="100%" align="center" pt="50px" spacing={3}>
-              <a href="/servicios" passHref>
+              <a href="/servicios">
                 <Image
                   src="/assets/contenedor.jpg"
                   w="150px"
@@ -310,9 +310,9 @@ export default function Home() {
               </NextLink>
             </VStack>
             <VStack w="100%" align="center" pt="50px" spacing={3}>
-              <a href="/servicios" passHref>
+              <a href="/servicios">
                 <Image
-                  src="/assets/plantaReciclaje.jpg"
+                  src="/assets/playaSucia.jpg"
                   w="150px"
                   h="150px"
                   overflow="hidden"
