@@ -50,11 +50,9 @@ export default function Nosotros() {
             spacing={4}
             justifyContent={["flex-end", "flex-end", "center", "center"]}
             pb="30px"
-            background="rgba(0,0,0,0.4)"
-            borderRadius="5%"
           >
             <Text
-              fontSize="3xl"
+              fontSize="5xl"
               color="white"
               align="center"
               fontWeight="extrabold"
