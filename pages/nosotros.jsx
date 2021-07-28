@@ -16,6 +16,7 @@ import {
   FaBalanceScale,
   FaSuitcase,
 } from "react-icons/fa";
+import { Heading } from "@chakra-ui/react";
 
 export default function Nosotros() {
   return (
@@ -51,18 +52,24 @@ export default function Nosotros() {
             justifyContent={["flex-end", "flex-end", "center", "center"]}
             pb="30px"
           >
-            <Text
-              fontSize="5xl"
+            <Heading
+              fontSize={["4xl", "5xl", "5xl", "5xl"]}
               color="white"
               align="center"
               fontWeight="extrabold"
-              w={["90%", "50%", "50%", "50%"]}
+              w={["100%", "50%", "50%", "50%"]}
             >
-              Trabajamos por un futuro mas limpio
-            </Text>
+              TRABAJAMOS POR UN FUTURO MÁS LIMPIO
+            </Heading>
             <NextLink href="/contacto" passHref>
-              <Button as="a" colorScheme="green" color="white" variant="solid">
-                ¿Donde encontrarnos?
+              <Button
+                as="a"
+                colorScheme="green"
+                bgColor="green.400"
+                color="white"
+                variant="solid"
+              >
+                ¿DONDE ENCONTRARNOS?
               </Button>
             </NextLink>
           </VStack>
@@ -76,21 +83,45 @@ export default function Nosotros() {
           align="center"
           justify="center"
         >
-          <Text fontSize="3xl" align="center" color="green.500" pb="20px">
-            Nosotros
+          <Text
+            fontSize={["3xl", "3xl", "4xl", "4xl"]}
+            align="center"
+            color="green.400"
+            pb="20px"
+            fontWeight="bold"
+          >
+            NOSOTROS
           </Text>
           <Divider orientation="horizontal" />
           <Text fontSize="lg" align="justify" pt="20px">
-            Somos una empresa comprometida con el cuidado del medio ambiente,
-            con más de 10 años de experiencia en el sector de reciclaje y
-            gestión de residuos. Nuestra base se encuentra en Manzanillo,
-            Colima. <br />
-            Contamos con una amplia gama de unidades vehiculares capaces de
-            satisfacer las necesidades de nuestros clientes. <br />
-            Tenemos lasautorizaciones correspondientes para la gestión de
-            residuos, estamos registrados ante IMADES y podemos expedir
-            manifiestos del destino final de los residuos.
+            En Reciclaje de la Costa, nuestro mayor compromiso es el cuidado del
+            medio ambiente, es por eso que cada año logramos reciclar miles de
+            toneladas de materiales reutilizables, siendo para nuestra región un
+            centro de acopio al alcance de todos. <br />
+            <br />
+            A la par, buscamos ser para nuestros clientes un proveedor
+            certificado que gestione de forma segura la disposición final de sus
+            residuos en vertederos autorizados, siempre ofreciendo soluciones
+            integrales a través de un servicio de calidad. <br />
+            <br />
+            Contamos con la capacidad y certificaciones necesarias para dar
+            servicio a empresas de diversos tamaños y sectores, gracias a una
+            amplia gama de unidades vehiculares y un personal altamente
+            capacitado.
+            <br />
+            <br />
+            Más de 10 años de experiencia nos respaldan como la empresa líder en
+            reciclaje y gestión integral de residuos en la ciudad de Manzanillo,
+            Colima.
           </Text>
+          <Center w="100%" h="auto">
+            <Image
+              src="/assets/nosotrosDivider.jpg"
+              w={["100%", "100%", "90%", "80%"]}
+              h="auto"
+              p="20px"
+            />
+          </Center>
         </Flex>
         {/* Mision */}
         <Flex
@@ -100,8 +131,14 @@ export default function Nosotros() {
           mb="50px"
         >
           <VStack w={["100%", "100%", "50%", "50%"]} h="auto" p="20px 20px">
-            <Text fontSize="3xl" align="center" color="green.500" pb="20px">
-              Mision
+            <Text
+              fontSize={["3xl", "3xl", "4xl", "4xl"]}
+              align="center"
+              color="green.400"
+              pb="20px"
+              fontWeight="bold"
+            >
+              MISIÓN
             </Text>
             <Divider orientation="horizontal" />
             <Text fontSize="lg" align="justify" pt="20px">
@@ -113,8 +150,14 @@ export default function Nosotros() {
           </VStack>
           {/* Vision */}
           <VStack w={["100%", "100%", "50%", "50%"]} h="auto" p="20px 20px">
-            <Text fontSize="3xl" align="center" color="green.500" pb="20px">
-              Vision
+            <Text
+              fontSize={["3xl", "3xl", "4xl", "4xl"]}
+              align="center"
+              color="green.400"
+              pb="20px"
+              fontWeight="bold"
+            >
+              VISIÓN
             </Text>
             <Divider orientation="horizontal" />
             <Text fontSize="lg" align="justify" pt="20px">
@@ -132,12 +175,18 @@ export default function Nosotros() {
           h={["auto", "auto", "250px", "250px"]}
           align="center"
           justify="center"
-          bgColor="green.500"
+          bgColor="green.400"
           pt="20px"
           pb="20px"
         >
-          <Text fontSize="3xl" color="white" pb="20px" align="center">
-            Nuestros valores
+          <Text
+            fontSize={["3xl", "3xl", "4xl", "4xl"]}
+            color="white"
+            pb="20px"
+            align="center"
+            fontWeight="bold"
+          >
+            NUESTROS VALORES
           </Text>
           <Grid
             w="80%"
@@ -191,7 +240,7 @@ export default function Nosotros() {
           bgSize="cover"
         >
           <VStack>
-            <Text fontSize="3xl" align="center">
+            <Text fontSize={["3xl", "3xl", "4xl", "4xl"]} align="center">
               ¿Quieres unirte a nuestro equipo? <br />
               Ve nuestras vacantes.
             </Text>
@@ -203,6 +252,7 @@ export default function Nosotros() {
               <Button
                 as="a"
                 colorScheme="green"
+                bgColor="green.400"
                 color="white"
                 variant="solid"
                 target="_blank"

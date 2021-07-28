@@ -1,63 +1,33 @@
-import { IconButton } from "@chakra-ui/button";
-import { Button } from "@chakra-ui/button";
-import { useDisclosure } from "@chakra-ui/hooks";
+import { IconButton, Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
-import { Box, Grid, ListItem, OrderedList } from "@chakra-ui/layout";
-import { Flex } from "@chakra-ui/layout";
-import { VStack } from "@chakra-ui/layout";
-import { Center, Text } from "@chakra-ui/layout";
+import {
+  Box,
+  Grid,
+  ListItem,
+  OrderedList,
+  Center,
+  Text,
+  Flex,
+  VStack,
+  List,
+} from "@chakra-ui/layout";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import Head from "next/head";
 import React from "react";
+import NextLink from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon,
+  UnorderedList,
+  Heading,
+  ListIcon,
 } from "@chakra-ui/react";
+import { MdCheckCircle } from "react-icons/md";
 
 export default function Servicios() {
-  const {
-    isOpen: isOpenMaterialesReciclables,
-    onOpen: onOpenMaterialesReciclables,
-    onClose: onCloseMaterialesReciclables,
-  } = useDisclosure();
-  const {
-    isOpen: isOpenResiduosSolidos,
-    onOpen: onOpenResiduosSolidos,
-    onClose: onCloseResiduosSolidos,
-  } = useDisclosure();
-  const {
-    isOpen: isOpenManejoEspecial,
-    onOpen: onOpenManejoEspecial,
-    onClose: onCloseManejoEspecial,
-  } = useDisclosure();
-  const {
-    isOpen: isOpenPapeleriaFiscal,
-    onOpen: onOpenPapeleriaFiscal,
-    onClose: onClosePapeleriaFiscal,
-  } = useDisclosure();
-  const {
-    isOpen: isOpenContenedores,
-    onOpen: onOpenContenedores,
-    onClose: onCloseContenedores,
-  } = useDisclosure();
-  const {
-    isOpen: isOpenApoyo,
-    onOpen: onOpenApoyo,
-    onClose: onCloseApoyo,
-  } = useDisclosure();
   return (
     <>
       <Head>
@@ -84,24 +54,24 @@ export default function Servicios() {
             justifyContent={["flex-end", "flex-end", "center", "center"]}
             pb="30px"
           >
-            <Text
-              fontSize="5xl"
+            <Heading
+              fontSize={["4xl", "5xl", "5xl", "5xl"]}
               color="white"
               align="center"
               fontWeight="extrabold"
               w={["90%", "50%", "50%", "50%"]}
             >
-              Conoce todo lo que tenemos para ti
-            </Text>
+              CONOCE TODO LO QUE TENEMOS PARA TI
+            </Heading>
             <IconButton
               aria-label="bajar"
               alignSelf="center"
               bgColor="transparent"
               color="white"
-              borderColor="green.500"
+              borderColor="green.400"
               icon={<IoIosArrowDown />}
               fontSize="5xl"
-              _hover={{ color: "white" }}
+              _hover={{ color: "black" }}
               onClick={() =>
                 document
                   .getElementById("descripcion")
@@ -116,15 +86,21 @@ export default function Servicios() {
           w="100%"
           h="auto"
           id="descripcion"
-          p="20px 10%"
+          p="20px 5%"
           pt="100px"
         >
-          <Text fontSize="3xl" color="green.500">
-            Servicios que ofrecemos
+          <Text
+            fontSize={["3xl", "3xl", "4xl", "4xl"]}
+            color="green.400"
+            fontWeight="bold"
+          >
+            SERVICIOS QUE OFRECEMOS
           </Text>
-          <Text fontSize="medium" color="black">
-            Texto descriptivo y atrapante para que el prospecto de cliente pueda
-            quedarse con nosotros, podemos basarnos en el kwplastics.
+          <Text h="auto" fontSize="md" align="left">
+            Enfocados en cuidar del medio ambiente, logramos reciclar miles de
+            toneladas de materiales al año, dándoles una segunda vida y
+            disminuyendo la cantidad de residuos depositados en el relleno
+            sanitario.
           </Text>
           <Grid
             w="100%"
@@ -133,314 +109,309 @@ export default function Servicios() {
             gridTemplateRows="auto"
             pt="20px"
             gap="30px"
-            justifyContent="center"
-            alignContent="center"
           >
-            <VStack w="100%" h="auto" spacing={6}>
-              <Text h="50px" fontSize="lg" fontWeight="bold">
-                Recolección de materiales reciclables
-              </Text>
-              <Center w="100%" h="200px">
+            <VStack
+              w="100%"
+              h="auto"
+              spacing={6}
+              shadow="2xl"
+              p="20px"
+              borderRadius="xl"
+            >
+              <Center w="100%" h="200px" overflow="hidden">
                 <Image
-                  w="300px"
+                  w="100%"
                   h="full"
                   src="/assets/materialReciclable.jpg"
+                  transition="transform .5s ease"
+                  _hover={{ transform: "scale(1.5)" }}
                 />
               </Center>
-              <Button
-                w="100%"
-                variant="solid"
-                colorScheme="green"
-                onClick={onOpenMaterialesReciclables}
-              >
-                Conoce mas
-              </Button>
-              <Modal
-                isOpen={isOpenMaterialesReciclables}
-                onClose={onCloseMaterialesReciclables}
-                isCentered
-                scrollBehavior="outside"
-                size="lg"
-              >
-                <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>
-                    Recoleccion de materiales reciclables
-                  </ModalHeader>
-                  <ModalCloseButton />
-                  <ModalBody>
-                    <Text>
-                      Como: PET, Cartón, papel, nylon, plástico duro, tapas,
-                      vidrio transparente, chatarra.
-                    </Text>
-                    <Image
-                      w="500px"
-                      h="auto"
-                      src="/assets/materialReciclable.jpg"
-                    />
-                  </ModalBody>
-
-                  <ModalFooter>
-                    <Button variant="ghost">Preguntas frecuentes</Button>
-                    <Button
-                      colorScheme="blue"
-                      mr={3}
-                      onClick={onCloseMaterialesReciclables}
-                    >
-                      Contactanos
-                    </Button>
-                  </ModalFooter>
-                </ModalContent>
-              </Modal>
-            </VStack>
-            <VStack w="100%" h="auto" spacing={6}>
-              <Text h="50px" fontSize="lg" fontWeight="bold">
-                Recolección de residuos sólidos urbanos
+              <Text fontSize="lg" align="left" fontWeight="bold">
+                RECOLECCIÓN DE MATERIALES RECICLABLES
               </Text>
-              <Center w="100%" h="200px">
-                <Image w="300px" h="full" src="/assets/basura.jpg" />
-              </Center>
-              <Button
-                w="100%"
-                variant="solid"
-                colorScheme="green"
-                onClick={onOpenResiduosSolidos}
-              >
-                Conoce mas
-              </Button>
-              <Modal
-                isOpen={isOpenResiduosSolidos}
-                onClose={onCloseResiduosSolidos}
-                isCentered
-                scrollBehavior="outside"
-                size="lg"
-              >
-                <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>
-                    Recolección de residuos sólidos urbanos
-                  </ModalHeader>
-                  <ModalCloseButton />
-                  <ModalBody>
-                    <Text>
-                      Recolección de residuos sólidos urbanos y residuos de
-                      manejo especial generados en casa habitación o en procesos
-                      productivos para su transporte a vertederos autorizados.
-                      Estos pueden ser basura, llantas, madera, escombro, entre
-                      otros.
-                    </Text>
-                    <Image w="500px" h="full" src="/assets/basura.jpg" />
-                  </ModalBody>
-
-                  <ModalFooter>
-                    <Button variant="ghost">Preguntas frecuentes</Button>
-                    <Button
-                      colorScheme="blue"
-                      mr={3}
-                      onClick={onCloseResiduosSolidos}
-                    >
-                      Contactanos
-                    </Button>
-                  </ModalFooter>
-                </ModalContent>
-              </Modal>
-            </VStack>
-            <VStack w="100%" h="auto" spacing={6}>
-              <Text h="50px" fontSize="lg" fontWeight="bold">
-                Recolección de residuos de manejo especial
+              <Text h="auto" fontSize="md" align="left">
+                Puedes llevar tus materiales reciclables directamente a nuestras
+                instalaciones o solicitar una recolección y enviamos un vehículo
+                a tu domicilio. <br />
+                <br />
+                Los materiales pueden ser:
               </Text>
-              <Center w="100%" h="200px">
-                <Image w="300px" h="full" src="/assets/playaSucia.jpg" />
-              </Center>
-              <Button
-                w="100%"
-                variant="solid"
-                colorScheme="green"
-                onClick={onOpenManejoEspecial}
-              >
-                Conoce mas
-              </Button>
-              <Modal
-                isOpen={isOpenManejoEspecial}
-                onClose={onCloseManejoEspecial}
-                isCentered
-                scrollBehavior="outside"
-                size="lg"
-              >
-                <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>
-                    Recolección de residuos de manejo especial
-                  </ModalHeader>
-                  <ModalCloseButton />
-                  <ModalBody>
-                    <Text>
-                      Qui culpa et ullamco consectetur veniam veniam nisi ad in
-                      officia tempor. Esse esse officia ea mollit fugiat
-                      consequat Lorem eu. Ullamco irure nulla labore eu
-                      cupidatat laborum tempor duis sint do. Consectetur
-                      voluptate enim nulla aliquip officia labore nostrud enim
-                      incididunt est est aliqua duis nulla.
-                    </Text>
-                  </ModalBody>
-
-                  <ModalFooter>
-                    <Button variant="ghost">Preguntas frecuentes</Button>
-                    <Button
-                      colorScheme="blue"
-                      mr={3}
-                      onClick={onCloseManejoEspecial}
-                    >
-                      Contactanos
-                    </Button>
-                  </ModalFooter>
-                </ModalContent>
-              </Modal>
-            </VStack>
-            <VStack w="100%" h="auto" spacing={6}>
-              <Text h="50px" fontSize="lg" fontWeight="bold">
-                Destrucción de papelería fiscal
+              <UnorderedList pl="5px" w="100%" align="left">
+                <ListItem>PET</ListItem>
+                <ListItem>Cartón</ListItem>
+                <ListItem>Papel</ListItem>
+                <ListItem>Nylon</ListItem>
+                <ListItem>Plástico duro</ListItem>
+                <ListItem>Tapas</ListItem>
+                <ListItem>Vidrio</ListItem>
+                <ListItem>Chatarra</ListItem>
+                <ListItem>Cobre</ListItem>
+                <ListItem>Bronce</ListItem>
+                <ListItem>Aluminio (latas)</ListItem>
+                <ListItem>Aluminio (perfil)</ListItem>
+              </UnorderedList>
+              <Text h="auto" fontSize="md" align="left">
+                Llama para agendar tu recolección y saber más sobre este
+                servicio. Ofrecemos precios competitivos. Recolectamos chatarra
+                industrial.
               </Text>
-              <Center w="100%" h="200px">
-                <Image w="300px" h="full" src="/assets/papelOficina.jpg" />
-              </Center>
-              <Button
-                w="100%"
-                variant="solid"
-                colorScheme="green"
-                onClick={onOpenPapeleriaFiscal}
-              >
-                Conoce mas
-              </Button>
-              <Modal
-                isOpen={isOpenPapeleriaFiscal}
-                onClose={onClosePapeleriaFiscal}
-                isCentered
-                scrollBehavior="outside"
-                size="lg"
-              >
-                <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>Destrucción de papelería fiscal</ModalHeader>
-                  <ModalCloseButton />
-                  <ModalBody>
-                    <Text>
-                      Recolección y destrucción de documentos confidenciales y
-                      archivo muerto.
-                    </Text>
-                    <Image w="500px" h="auto" src="/assets/papelOficina.jpg" />
-                  </ModalBody>
-
-                  <ModalFooter>
-                    <Button variant="ghost">Preguntas frecuentes</Button>
-                    <Button
-                      colorScheme="blue"
-                      mr={3}
-                      onClick={onClosePapeleriaFiscal}
-                    >
-                      Contactanos
-                    </Button>
-                  </ModalFooter>
-                </ModalContent>
-              </Modal>
             </VStack>
-            <VStack w="100%" h="auto" spacing={6}>
-              <Text h="50px" fontSize="lg" fontWeight="bold">
-                Renta de contenedores
-              </Text>
-              <Center w="100%" h="200px">
-                <Image w="300px" h="full" src="/assets/contenedor.jpg" />
+            <VStack
+              w="100%"
+              h="auto"
+              spacing={6}
+              shadow="2xl"
+              p="20px"
+              borderRadius="xl"
+            >
+              <Center w="100%" h="200px" overflow="hidden">
+                <Image
+                  w="100%"
+                  h="full"
+                  src="/assets/basuraHogar.jpg"
+                  transition="transform .5s ease"
+                  _hover={{ transform: "scale(1.5)" }}
+                />
               </Center>
-              <Button
-                w="100%"
-                variant="solid"
-                colorScheme="green"
-                onClick={onOpenContenedores}
-              >
-                Conoce mas
-              </Button>
-              <Modal
-                isOpen={isOpenContenedores}
-                onClose={onCloseContenedores}
-                isCentered
-                scrollBehavior="outside"
-                size="lg"
-              >
-                <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>Renta de contenedores</ModalHeader>
-                  <ModalCloseButton />
-                  <ModalBody>
-                    <Text>
-                      Renta de contenedores de 1, 3, 6, 15, 20 y 30 metros
-                      cúbicos para el almacenamiento de residuos.
-                    </Text>
-                    <Image w="500px" h="auto" src="/assets/contenedor.jpg" />
-                  </ModalBody>
-
-                  <ModalFooter>
-                    <Button variant="ghost">Preguntas frecuentes</Button>
-                    <Button
-                      colorScheme="blue"
-                      mr={3}
-                      onClick={onCloseContenedores}
-                    >
-                      Contactanos
-                    </Button>
-                  </ModalFooter>
-                </ModalContent>
-              </Modal>
+              <Text fontSize="lg" align="left" fontWeight="bold">
+                GESTIÓN DE RESIDUOS SÓLIDOS URBANOS
+              </Text>
+              <Text h="auto" fontSize="md" align="left">
+                Si eres un fraccionamiento o un pequeño establecimiento este
+                servicio es ideal para ti. Realizamos la recolección de:
+              </Text>
+              <UnorderedList pl="5px" w="100%" align="left">
+                <ListItem>
+                  Residuos generados en las casas habitación, de materiales que
+                  se utilizan en sus actividades domésticas, de los productos
+                  que consumen y de sus envases, embalajes o empaques.
+                </ListItem>
+                <br />
+                <ListItem>
+                  Los residuos con características domiciliarias que provienen
+                  de cualquier otra actividad dentro de establecimientos.
+                </ListItem>
+                <br />
+                <ListItem>
+                  Residuos resultantes de la limpieza de las vías y lugares
+                  públicos.
+                </ListItem>
+              </UnorderedList>
+              <Text h="auto" fontSize="md" align="left">
+                Gestionamos de forma segura la disposición final de tus residuos
+                en vertederos autorizados.
+              </Text>
             </VStack>
-            <VStack w="100%" h="auto" spacing={6}>
-              <Text h="50px" fontSize="lg" fontWeight="bold">
-                Apoyo en programas de reciclado
-              </Text>
-              <Center w="100%" h="200px">
-                <Image w="300px" h="full" src="/assets/playaSucia.jpg" />
+            <VStack
+              w="100%"
+              h="auto"
+              spacing={6}
+              shadow="2xl"
+              p="20px"
+              borderRadius="xl"
+            >
+              <Center w="100%" h="200px" overflow="hidden">
+                <Image
+                  w="100%"
+                  h="full"
+                  src="/assets/residuosGrandes.jpg"
+                  transition="transform .5s ease"
+                  _hover={{ transform: "scale(1.5)" }}
+                />
               </Center>
-              <Button
-                w="100%"
-                variant="solid"
-                colorScheme="green"
-                onClick={onOpenApoyo}
-              >
-                Conoce mas
-              </Button>
-              <Modal
-                isOpen={isOpenApoyo}
-                onClose={onCloseApoyo}
-                isCentered
-                scrollBehavior="outside"
-                size="lg"
-              >
-                <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>Apoyo en programas de reciclado</ModalHeader>
-                  <ModalCloseButton />
-                  <ModalBody>
-                    <Text>
-                      Unimos esfuerzos para limpiar áreas naturales como playas,
-                      ríos, áreas urbanas y salvaguardar su equilibrio
-                      ecológico.
-                    </Text>
-                    <Image w="500px" h="auto" src="/assets/playaSucia.jpg" />
-                  </ModalBody>
-
-                  <ModalFooter>
-                    <Button variant="ghost">Preguntas frecuentes</Button>
-                    <Button colorScheme="blue" mr={3} onClick={onCloseApoyo}>
-                      Contactanos
-                    </Button>
-                  </ModalFooter>
-                </ModalContent>
-              </Modal>
+              <Text fontSize="lg" align="left" fontWeight="bold">
+                GESTIÓN DE RESIDUOS DE MANEJO ESPECIAL
+              </Text>
+              <Text h="auto" fontSize="md" align="left">
+                Si eres un gran generador de residuos sólidos urbanos debido a
+                tus procesos productivos, este servicio es ideal para ti.
+              </Text>
+              <UnorderedList pl="5px" w="100%" align="left">
+                <ListItem>
+                  Residuos de tiendas departamentales o centros comerciales
+                  generados en grandes volúmenes.
+                </ListItem>
+                <br />
+                <ListItem>
+                  Residuos de la construcción, mantenimiento y demolición en
+                  general.
+                </ListItem>
+                <br />
+                <ListItem>
+                  Lodos provenientes del tratamiento de aguas residuales.
+                </ListItem>
+                <br />
+                <ListItem>
+                  Residuos de los servicios de transporte, así como los
+                  generados en puertos, aeropuertos, terminales ferroviarias y
+                  portuarias y en las aduanas.
+                </ListItem>
+              </UnorderedList>
+              <Text h="auto" fontSize="md" align="left">
+                Contamos con unidades de transporte listas para todo tipo de
+                desecho.
+              </Text>
+            </VStack>
+            <VStack
+              w="100%"
+              h="auto"
+              spacing={6}
+              shadow="2xl"
+              p="20px"
+              borderRadius="xl"
+            >
+              <Center w="100%" h="200px" overflow="hidden">
+                <Image
+                  w="100%"
+                  h="full"
+                  src="/assets/papelOficina.jpg"
+                  transition="transform .5s ease"
+                  _hover={{ transform: "scale(1.5)" }}
+                />
+              </Center>
+              <Text fontSize="lg" align="left" fontWeight="bold">
+                DESTRUCCIÓN DE PAPELERÍA FISCAL
+              </Text>
+              <Text h="auto" fontSize="md" align="left">
+                En este servicio ofrecemos la destrucción segura de tus archivos
+                confidenciales. Nos encargamos de la recolección, resguardo y
+                destrucción de archivo muerto. <br />
+                <br />
+                Emitimos una carta responsiva por el manejo de información
+                confidencial y una constancia de destrucción.
+                <br />
+                <br />
+                Destruye tu archivo muerto de forma segura y cuida el medio
+                ambiente.
+              </Text>
+            </VStack>
+            <VStack
+              w="100%"
+              h="auto"
+              spacing={6}
+              shadow="2xl"
+              p="20px"
+              borderRadius="xl"
+            >
+              <Center w="100%" h="200px" overflow="hidden">
+                <Image
+                  w="100%"
+                  h="full"
+                  src="/assets/contenedor.jpg"
+                  transition="transform .5s ease"
+                  _hover={{ transform: "scale(1.5)" }}
+                />
+              </Center>
+              <Text fontSize="lg" align="left" fontWeight="bold">
+                RENTA DE CONTENEDORES
+              </Text>
+              <Text h="auto" fontSize="md" align="left">
+                Tenemos disponible la renta de contenedores de 1, 3, 6, 15, 20 y
+                30 metros cúbicos para el almacenamiento seguro de tus residuos.
+                <br />
+                <br />
+                Llama para saber más sobre este servicio y consultar
+                disponibilidad.
+              </Text>
+            </VStack>
+            <VStack
+              w="100%"
+              h="auto"
+              spacing={6}
+              shadow="2xl"
+              p="20px"
+              borderRadius="xl"
+            >
+              <Center w="100%" h="200px" overflow="hidden">
+                <Image
+                  w="100%"
+                  h="full"
+                  src="/assets/programas.jpg"
+                  transition="transform .5s ease"
+                  _hover={{ transform: "scale(1.5)" }}
+                />
+              </Center>
+              <Text fontSize="lg" align="left" fontWeight="bold">
+                APOYO EN PROGRAMAS DE RECICLADO
+              </Text>
+              <Text h="auto" fontSize="md" align="left">
+                Unimos esfuerzos para limpiar áreas naturales como playas, ríos,
+                áreas urbanas y salvaguardar su equilibrio ecológico. <br />
+                <br />
+                Si tienes algún programa de reciclaje o de recolección de basura
+                que deseas llevar a cabo no dudes en contactarnos.
+              </Text>
             </VStack>
           </Grid>
+          <NextLink href="/contacto" passHref>
+            <Button
+              as="a"
+              size="xl"
+              colorScheme="green"
+              color="white"
+              bgColor="green.400"
+              variant="solid"
+              p="30px"
+              m={["20px 0px", "20px 0px", "40px", "40px"]}
+              fontSize={["16px", "20px", "20px", "20px"]}
+              textAlign="center"
+            >
+              CONTÁCTANOS PARA PROGRAMAR <br />
+              TU RECOLECCIÓN
+            </Button>
+          </NextLink>
+          <Text fontSize="2xl" align="left" fontWeight="bold" pb="10px">
+            Estás con los expertos
+          </Text>
+          <List fontSize="xl" pl="5px" w="100%" align="left">
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.400" />
+              Más de 10 años de experiencia en reciclaje y recolección de
+              residuos nos respaldan.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.400" />
+              Registro ante IMADES.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.400" />
+              Precios competitivos de compra y venta de materiales reciclables.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.400" />
+              Bascula industrial calibrada, verificada y certificada.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.400" />
+              Infraestructura de reciclaje, bandas de separación y
+              clasificación, compactadoras y prensas.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.400" />
+              Infraestructura de transporte con unidades tipo Roll Off, cajas
+              cerradas de 48 pies, volteos de 14m3, pipas de 10 y 20 mil litros,
+              planas de 40 pies, camionetas de 3.5 toneladas y grúa de 9
+              toneladas.
+            </ListItem>
+          </List>
         </Flex>
         {/* Preguntas frecuentes */}
         <Flex w="80%" flexDir="column" p="50px 0px">
-          <Text fontSize="3xl" pb="20px">
+          <Text
+            color="white"
+            fontSize="3xl"
+            pb="20px"
+            w="100%"
+            bgColor="green.400"
+            borderRadius="10px"
+          >
             Preguntas frecuentes:
+          </Text>
+          <Text fontSize="xl" pb="20px">
+            En esta sección responderemos a algunas de tus preguntas. En caso de
+            no encontrar respuesta a tus cuestiones, por favor, mándanos una
+            consulta desde el formulario.
           </Text>
           <Accordion allowMultiple>
             <AccordionItem>
