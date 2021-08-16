@@ -1,6 +1,6 @@
 (function () {
   var options = {
-    whatsapp: "+1(314)118-47-10", // WhatsApp number
+    whatsapp: "+52(314)118-47-10", // WhatsApp number
     call_to_action: "Contacta con nosotros", // Call to action
     position: "right", // Position may be 'right' or 'left'
   };

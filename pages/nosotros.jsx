@@ -23,7 +23,7 @@ export default function Nosotros() {
     <>
       <Head>
         <title>Reciclaje de la Costa - Nosotros</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Flex
         flexDir="column"

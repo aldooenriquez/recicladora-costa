@@ -50,7 +50,7 @@ export default function Contacto() {
     <>
       <Head>
         <title>Reciclaje de la Costa - Contacto</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Flex flexDir="column" w="100%" h="auto" bgColor="white" m="0 auto">
         {/* Banner */}

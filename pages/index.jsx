@@ -96,7 +96,7 @@ export default function Home() {
     <>
       <Head>
         <title>Reciclaje de la Costa - Inicio</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <script async src="../components/messageButton.js"></script>
       </Head>
       <Flex
@@ -560,7 +560,7 @@ export default function Home() {
               </SwiperSlide>
               <SwiperSlide key={`slide-7`}>
                 <VStack align="center" justify="center" p="40px 0px">
-                  <Image src="/assets/logo8.jpg" w="300px" h="150px" />
+                  <Image src="/assets/logo8.png" w="300px" h="150px" />
                   <Text fontSize="20px" fontWeight="bold">
                     CARLS JR
                   </Text>

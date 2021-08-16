@@ -32,7 +32,7 @@ export default function Servicios() {
     <>
       <Head>
         <title>Reciclaje de la Costa - Servicios</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Flex flexDir="column" w="100%" h="auto" bgColor="white" align="center">
         {/* Banner */}
@@ -380,7 +380,7 @@ export default function Servicios() {
             </ListItem>
             <ListItem>
               <ListIcon as={MdCheckCircle} color="green.400" />
-              Bascula industrial calibrada, verificada y certificada.
+              Báscula industrial calibrada, verificada y certificada.
             </ListItem>
             <ListItem>
               <ListIcon as={MdCheckCircle} color="green.400" />
