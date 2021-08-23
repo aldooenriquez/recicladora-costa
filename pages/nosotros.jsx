@@ -142,7 +142,7 @@ export default function Nosotros() {
             </Text>
             <Divider orientation="horizontal" />
             <Text fontSize="lg" align="justify" pt="20px">
-              Proveer soluciones sustentables en la gestión de residuos no
+              Proveer soluciones intégrales en la gestión de residuos no
               peligrosos a empresas e individuos, a través de un servicio de
               calidad, eficiente y profesional, al beneficio de nuestros
               clientes, colaboradores y medio ambiente.

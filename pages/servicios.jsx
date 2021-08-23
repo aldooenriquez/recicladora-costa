@@ -238,9 +238,7 @@ export default function Servicios() {
                   general.
                 </ListItem>
                 <br />
-                <ListItem>
-                  Lodos provenientes del tratamiento de aguas residuales.
-                </ListItem>
+                <ListItem>Desechos de llantas y maderas.</ListItem>
                 <br />
                 <ListItem>
                   Residuos de los servicios de transporte, así como los
@@ -303,7 +301,7 @@ export default function Servicios() {
                   _hover={{ transform: "scale(1.5)" }}
                 />
               </Center>
-              <Text fontSize="lg" align="left" fontWeight="bold">
+              <Text fontSize="lg" align="left" fontWeight="bold" w="100%">
                 RENTA DE CONTENEDORES
               </Text>
               <Text h="auto" fontSize="md" align="left">

@@ -226,7 +226,7 @@ function Footer({ children }) {
       <Center w="60%">
         <Text fontSize={["md", "md", "lg", "lg"]} color="white" align="center">
           Reciclaje de la Costa <br />
-          Calle 24 #30, Lib. Tapeixtles, 28239 Manzanillo, Col. <br />
+          Calle 24 #30, Col. Tapeixtles, 28239 Manzanillo, Col. <br />
           Tel. 314 334 8888
         </Text>
       </Center>
