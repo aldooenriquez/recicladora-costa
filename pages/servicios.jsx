@@ -33,6 +33,15 @@ export default function Servicios() {
       <Head>
         <title>Reciclaje de la Costa - Servicios</title>
         <link rel="icon" href="/favicon.png" />
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="description"
+          content="Servicios de reciclaje ofrecidos en Manzanillo, Colima"
+        ></meta>
+        <meta
+          name="keywords"
+          content="reciclar,servicio,reciclaje,residuos,basura,manzanillo,colima"
+        ></meta>
       </Head>
       <Flex flexDir="column" w="100%" h="auto" bgColor="white" align="center">
         {/* Banner */}

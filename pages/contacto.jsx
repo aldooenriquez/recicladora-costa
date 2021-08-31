@@ -51,6 +51,14 @@ export default function Contacto() {
       <Head>
         <title>Reciclaje de la Costa - Contacto</title>
         <link rel="icon" href="/favicon.png" />
+        <meta
+          name="description"
+          content="Contacta a Reciclaje de la Costa"
+        ></meta>
+        <meta
+          name="keywords"
+          content="reciclar,servicio,reciclaje,residuos,basura,manzanillo,colima,costa"
+        ></meta>
       </Head>
       <Flex flexDir="column" w="100%" h="auto" bgColor="white" m="0 auto">
         {/* Banner */}

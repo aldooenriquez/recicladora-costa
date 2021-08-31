@@ -24,6 +24,14 @@ export default function Nosotros() {
       <Head>
         <title>Reciclaje de la Costa - Nosotros</title>
         <link rel="icon" href="/favicon.png" />
+        <meta
+          name="description"
+          content="Informacion sobre Reciclaje de la Costa"
+        ></meta>
+        <meta
+          name="keywords"
+          content="reciclar,servicio,reciclaje,residuos,basura,manzanillo,colima,costa"
+        ></meta>
       </Head>
       <Flex
         flexDir="column"

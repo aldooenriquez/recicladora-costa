@@ -98,6 +98,15 @@ export default function Home() {
         <title>Reciclaje de la Costa - Inicio</title>
         <link rel="icon" href="/favicon.png" />
         <script async src="../components/messageButton.js"></script>
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="description"
+          content="Empresa líder en reciclaje y gestión integral de residuos en Manzanillo, Colima."
+        ></meta>
+        <meta
+          name="keywords"
+          content="reciclar,recicla,reciclaje,residuos,basura,manzanillo,colima,costa"
+        ></meta>
       </Head>
       <Flex
         flexDir="column"
